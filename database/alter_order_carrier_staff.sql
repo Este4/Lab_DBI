@@ -25,3 +25,4 @@ BEGIN
                 REFERENCES shipping_carrier (carrier_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
     END IF;
 END $$;
+

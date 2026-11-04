@@ -13,3 +13,4 @@ CREATE TABLE shipping_carrier (
         contact_phone IS NULL OR LENGTH(TRIM(contact_phone)) >= 8
     )
 );
+

@@ -19,3 +19,4 @@ CREATE TABLE package_material (
         quantity_used > 0 AND quantity_used <> 'NaN'::NUMERIC
     )
 );
+

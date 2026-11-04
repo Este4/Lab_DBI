@@ -67,3 +67,4 @@ INSERT INTO packaging_material (material_code, material_name, measure_unit, unit
 --     p.order_id
 -- FROM shipment s
 -- JOIN package p ON s.package_id = p.package_id;
+

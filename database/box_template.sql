@@ -22,3 +22,4 @@ CREATE TABLE box_template (
     CONSTRAINT ck_box_template_max_weight CHECK (max_weight_gram > 0),
     CONSTRAINT ck_box_template_unit_cost CHECK (unit_cost >= 0 AND unit_cost <> 'NaN'::NUMERIC)
 );
+

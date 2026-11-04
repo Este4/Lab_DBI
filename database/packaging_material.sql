@@ -15,3 +15,4 @@ CREATE TABLE packaging_material (
     CONSTRAINT ck_packaging_material_unit_nonblank CHECK (LENGTH(TRIM(measure_unit)) > 0),
     CONSTRAINT ck_packaging_material_unit_cost CHECK (unit_cost >= 0 AND unit_cost <> 'NaN'::NUMERIC)
 );
+

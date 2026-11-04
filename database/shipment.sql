@@ -34,3 +34,4 @@ CREATE TABLE shipment (
 -- Note:
 -- Handover to carrier reduces both physical_quantity and reserved_quantity in inventory
 -- and records a 'SHIPMENT' transaction in inventory_transaction within the same database transaction.
+

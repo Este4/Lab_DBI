@@ -14,3 +14,4 @@ CREATE TABLE staff (
         email IS NULL OR (LENGTH(TRIM(email)) > 0 AND email LIKE '%@%.%')
     )
 );
+

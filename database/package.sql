@@ -37,3 +37,4 @@ CREATE TABLE package (
 -- Note:
 -- Packed weight should typically not exceed box_template.max_weight_gram;
 -- this cross-table validation is enforced via application/service logic or triggers.
+

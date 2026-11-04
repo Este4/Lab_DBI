@@ -22,3 +22,4 @@ CREATE TABLE package_line (
 -- The package and order line must belong to the SAME order (package.order_id = order_line.order_id).
 -- The total SUM(quantity_in_package) across packages for an order line must not exceed order_line.quantity.
 -- These cross-row/cross-table rules are enforced by application transactions or database triggers.
+
