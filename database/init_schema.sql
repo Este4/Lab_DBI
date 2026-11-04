@@ -353,3 +353,4 @@ CREATE TABLE shipment (
         OR (shipment_status <> 'PENDING' AND handed_over_at IS NOT NULL)
     )
 );
+
