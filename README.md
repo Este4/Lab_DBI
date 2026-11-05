@@ -31,33 +31,20 @@ This project implements the **16 core relations** documented in the group report
 
 ---
 
-## Quick Start / Execution Order
+## Quick Start & Execution
 
-To initialize the complete database in PostgreSQL, execute the all-in-one script in topological dependency order:
+Dự án hỗ trợ cả hai hệ quản trị CSDL phổ biến: **PostgreSQL** và **Microsoft SQL Server (T-SQL)** với 100% cùng cấu trúc thực thể, quan hệ và ràng buộc.
 
+### 1. Dành cho PostgreSQL (pgAdmin 4 / psql)
+Chạy kịch bản khởi tạo toàn diện:
 ```bash
 psql -U <username> -d <database_name> -f database/init_schema.sql
 ```
-
-Or execute individual files in the following dependency sequence:
-1. `sales_channel.sql`
-2. `warehouse.sql`
-3. `product.sql`
-4. `staff.sql`
-5. `shipping_carrier.sql`
-6. `box_template.sql`
-7. `packaging_material.sql`
-8. `sales_account.sql`
-9. `inventory.sql`
-10. `customer.sql`
-11. `customer_order.sql`
-12. `order_line.sql`
-13. `package.sql`
-14. `package_line.sql`
-15. `package_material.sql`
-16. `shipment.sql`
-
-To load sample data for testing:
+Hoặc chạy kịch bản live demo:
 ```bash
-psql -U <username> -d <database_name> -f database/packaging_and_shipping_sample.sql
+psql -U <username> -d <database_name> -f script-dbi/00_setup_demo.sql
 ```
+
+### 2. Dành cho Microsoft SQL Server (SSMS / Azure Data Studio)
+* **Kịch bản DDL 16 bảng chuẩn**: Chạy file [`database/init_schema_mssql.sql`](database/init_schema_mssql.sql).
+* **Kịch bản Full Setup & Stored Procedures**: Mở file [`script-dbi/00_setup_demo_mssql.sql`](script-dbi/00_setup_demo_mssql.sql) trong **SQL Server Management Studio (SSMS)** và ấn `Execute` (F5).
