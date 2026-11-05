@@ -874,3 +874,4 @@ PRINT '========================================================================'
 PRINT 'KHOI TAO CSDL THUAN T-SQL CHO MICROSOFT SQL SERVER THANH CONG 100%!';
 PRINT 'Schema: dbi202_live | Bao gom: 17 Bang chuan + 7 Thu tuc xu ly nghiep vu';
 PRINT '========================================================================';
+
