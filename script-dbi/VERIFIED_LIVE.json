@@ -1,0 +1,400 @@
+{
+  "date": "2026-11-05",
+  "version": "PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit",
+  "results": [
+    {
+      "name": "Cai schema rieng",
+      "status": "PASS",
+      "actual": "17 bang, 0 user trigger"
+    },
+    {
+      "name": "INSERT cha truoc con",
+      "status": "PASS",
+      "actual": "4 don,6 dong,4 cap ton va4 ledger nhap"
+    },
+    {
+      "name": "Q1",
+      "status": "PASS",
+      "actual": [
+        {
+          "external_order_id": "DEMO-SUCCESS",
+          "channel_name": "Shopee",
+          "shop_display_name": "Shop sách và ly",
+          "product_name": "Sách DBI202",
+          "quantity_ordered": 5,
+          "unit_price_at_order": "10000.00",
+          "line_total": "50000.00"
+        },
+        {
+          "external_order_id": "DEMO-SUCCESS",
+          "channel_name": "Shopee",
+          "shop_display_name": "Shop sách và ly",
+          "product_name": "Ly thủy tinh",
+          "quantity_ordered": 2,
+          "unit_price_at_order": "20000.00",
+          "line_total": "40000.00"
+        }
+      ]
+    },
+    {
+      "name": "Q2",
+      "status": "PASS",
+      "actual": [
+        {
+          "order_id": 1,
+          "external_order_id": "DEMO-SUCCESS",
+          "line_count": "2",
+          "goods_total": "90000.00"
+        },
+        {
+          "order_id": 2,
+          "external_order_id": "DEMO-SHORT",
+          "line_count": "1",
+          "goods_total": "990000.00"
+        },
+        {
+          "order_id": 3,
+          "external_order_id": "DEMO-CANCEL",
+          "line_count": "1",
+          "goods_total": "20000.00"
+        },
+        {
+          "order_id": 4,
+          "external_order_id": "DEMO-MOVE",
+          "line_count": "2",
+          "goods_total": "40000.00"
+        }
+      ]
+    },
+    {
+      "name": "Q3",
+      "status": "PASS",
+      "actual": [
+        {
+          "channel_name": "Shopee",
+          "order_count": "3"
+        },
+        {
+          "channel_name": "Website",
+          "order_count": "1"
+        }
+      ]
+    },
+    {
+      "name": "Q4",
+      "status": "PASS",
+      "actual": [
+        {
+          "warehouse_name": "Kho Thủ Đức",
+          "product_name": "Sách DBI202",
+          "physical_qty": 10,
+          "reserved_qty": 0,
+          "available_qty": 10
+        },
+        {
+          "warehouse_name": "Kho Thủ Đức",
+          "product_name": "Ly thủy tinh",
+          "physical_qty": 3,
+          "reserved_qty": 0,
+          "available_qty": 3
+        },
+        {
+          "warehouse_name": "Kho Hà Nội",
+          "product_name": "Sách DBI202",
+          "physical_qty": 6,
+          "reserved_qty": 0,
+          "available_qty": 6
+        },
+        {
+          "warehouse_name": "Kho Hà Nội",
+          "product_name": "Ly thủy tinh",
+          "physical_qty": 5,
+          "reserved_qty": 0,
+          "available_qty": 5
+        }
+      ]
+    },
+    {
+      "name": "E1 Trùng PK ghép",
+      "status": "PASS",
+      "actual": {
+        "code": "23505",
+        "constraint": "pk_inventory",
+        "message": "duplicate key value violates unique constraint \"pk_inventory\""
+      }
+    },
+    {
+      "name": "E2 FK sản phẩm không tồn tại",
+      "status": "PASS",
+      "actual": {
+        "code": "23503",
+        "constraint": "fk_order_line_product",
+        "message": "insert or update on table \"order_line\" violates foreign key constraint \"fk_order_line_product\""
+      }
+    },
+    {
+      "name": "E3 Reserve vượt physical",
+      "status": "PASS",
+      "actual": {
+        "code": "23514",
+        "constraint": "ck_inventory_reserved_limit",
+        "message": "new row for relation \"inventory\" violates check constraint \"ck_inventory_reserved_limit\""
+      }
+    },
+    {
+      "name": "E4 Trùng mã đơn trong shop",
+      "status": "PASS",
+      "actual": {
+        "code": "23505",
+        "constraint": "uq_customer_order_account_external",
+        "message": "duplicate key value violates unique constraint \"uq_customer_order_account_external\""
+      }
+    },
+    {
+      "name": "E5 Thiếu tên sản phẩm",
+      "status": "PASS",
+      "actual": {
+        "code": "23502",
+        "constraint": null,
+        "message": "null value in column \"product_name\" of relation \"product\" violates not-null constraint"
+      }
+    },
+    {
+      "name": "E6 Function từ chối thiếu hàng",
+      "status": "PASS",
+      "actual": {
+        "code": "P0001",
+        "constraint": null,
+        "message": "Khong du hang san pham 1"
+      }
+    },
+    {
+      "name": "Giu hang",
+      "status": "PASS",
+      "actual": "Sach10/giu5; ly3/giu2"
+    },
+    {
+      "name": "Dong goi va duyet",
+      "status": "PASS",
+      "actual": "Hai kien APPROVED, don PACKED"
+    },
+    {
+      "name": "Trigger minh hoa va rollback",
+      "status": "PASS",
+      "actual": {
+        "message": "TRIGGER DEMO: dong hang khong thuoc don cua kien",
+        "userTriggersAfter": 0
+      }
+    },
+    {
+      "name": "Ban giao",
+      "status": "PASS",
+      "actual": "Sach5/giu0; ly1/giu0; don SHIPPED"
+    },
+    {
+      "name": "Giao thanh cong",
+      "status": "PASS",
+      "actual": "Don DELIVERED"
+    },
+    {
+      "name": "Q5",
+      "status": "PASS",
+      "actual": [
+        {
+          "package_id": 1,
+          "box_cost": "2500.00",
+          "material_cost": "2400.00000",
+          "packaging_cost": "4900.00000"
+        },
+        {
+          "package_id": 2,
+          "box_cost": "2500.00",
+          "material_cost": "600.00000",
+          "packaging_cost": "3100.00000"
+        }
+      ]
+    },
+    {
+      "name": "Q6",
+      "status": "PASS",
+      "actual": [
+        {
+          "warehouse_id": 1,
+          "product_id": 1,
+          "physical_qty": 5,
+          "ledger_balance": "5",
+          "balanced": true
+        },
+        {
+          "warehouse_id": 1,
+          "product_id": 2,
+          "physical_qty": 1,
+          "ledger_balance": "1",
+          "balanced": true
+        },
+        {
+          "warehouse_id": 2,
+          "product_id": 1,
+          "physical_qty": 6,
+          "ledger_balance": "6",
+          "balanced": true
+        },
+        {
+          "warehouse_id": 2,
+          "product_id": 2,
+          "physical_qty": 5,
+          "ledger_balance": "5",
+          "balanced": true
+        }
+      ]
+    },
+    {
+      "name": "Q7",
+      "status": "PASS",
+      "actual": [
+        {
+          "delivered_order_count": "1",
+          "delivered_goods_value": "90000.00"
+        }
+      ]
+    }
+  ],
+  "outputs": {
+    "Q1": [
+      {
+        "external_order_id": "DEMO-SUCCESS",
+        "channel_name": "Shopee",
+        "shop_display_name": "Shop sách và ly",
+        "product_name": "Sách DBI202",
+        "quantity_ordered": 5,
+        "unit_price_at_order": "10000.00",
+        "line_total": "50000.00"
+      },
+      {
+        "external_order_id": "DEMO-SUCCESS",
+        "channel_name": "Shopee",
+        "shop_display_name": "Shop sách và ly",
+        "product_name": "Ly thủy tinh",
+        "quantity_ordered": 2,
+        "unit_price_at_order": "20000.00",
+        "line_total": "40000.00"
+      }
+    ],
+    "Q2": [
+      {
+        "order_id": 1,
+        "external_order_id": "DEMO-SUCCESS",
+        "line_count": "2",
+        "goods_total": "90000.00"
+      },
+      {
+        "order_id": 2,
+        "external_order_id": "DEMO-SHORT",
+        "line_count": "1",
+        "goods_total": "990000.00"
+      },
+      {
+        "order_id": 3,
+        "external_order_id": "DEMO-CANCEL",
+        "line_count": "1",
+        "goods_total": "20000.00"
+      },
+      {
+        "order_id": 4,
+        "external_order_id": "DEMO-MOVE",
+        "line_count": "2",
+        "goods_total": "40000.00"
+      }
+    ],
+    "Q3": [
+      {
+        "channel_name": "Shopee",
+        "order_count": "3"
+      },
+      {
+        "channel_name": "Website",
+        "order_count": "1"
+      }
+    ],
+    "Q4": [
+      {
+        "warehouse_name": "Kho Thủ Đức",
+        "product_name": "Sách DBI202",
+        "physical_qty": 10,
+        "reserved_qty": 0,
+        "available_qty": 10
+      },
+      {
+        "warehouse_name": "Kho Thủ Đức",
+        "product_name": "Ly thủy tinh",
+        "physical_qty": 3,
+        "reserved_qty": 0,
+        "available_qty": 3
+      },
+      {
+        "warehouse_name": "Kho Hà Nội",
+        "product_name": "Sách DBI202",
+        "physical_qty": 6,
+        "reserved_qty": 0,
+        "available_qty": 6
+      },
+      {
+        "warehouse_name": "Kho Hà Nội",
+        "product_name": "Ly thủy tinh",
+        "physical_qty": 5,
+        "reserved_qty": 0,
+        "available_qty": 5
+      }
+    ],
+    "Q5": [
+      {
+        "package_id": 1,
+        "box_cost": "2500.00",
+        "material_cost": "2400.00000",
+        "packaging_cost": "4900.00000"
+      },
+      {
+        "package_id": 2,
+        "box_cost": "2500.00",
+        "material_cost": "600.00000",
+        "packaging_cost": "3100.00000"
+      }
+    ],
+    "Q6": [
+      {
+        "warehouse_id": 1,
+        "product_id": 1,
+        "physical_qty": 5,
+        "ledger_balance": "5",
+        "balanced": true
+      },
+      {
+        "warehouse_id": 1,
+        "product_id": 2,
+        "physical_qty": 1,
+        "ledger_balance": "1",
+        "balanced": true
+      },
+      {
+        "warehouse_id": 2,
+        "product_id": 1,
+        "physical_qty": 6,
+        "ledger_balance": "6",
+        "balanced": true
+      },
+      {
+        "warehouse_id": 2,
+        "product_id": 2,
+        "physical_qty": 5,
+        "ledger_balance": "5",
+        "balanced": true
+      }
+    ],
+    "Q7": [
+      {
+        "delivered_order_count": "1",
+        "delivered_goods_value": "90000.00"
+      }
+    ]
+  }
+}

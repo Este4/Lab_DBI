@@ -1,0 +1,21 @@
+PASS Cai schema rieng
+PASS INSERT cha truoc con
+PASS Q1
+PASS Q2
+PASS Q3
+PASS Q4
+PASS E1 Trùng PK ghép
+PASS E2 FK sản phẩm không tồn tại
+PASS E3 Reserve vượt physical
+PASS E4 Trùng mã đơn trong shop
+PASS E5 Thiếu tên sản phẩm
+PASS E6 Function từ chối thiếu hàng
+PASS Giu hang
+PASS Dong goi va duyet
+PASS Trigger minh hoa va rollback
+PASS Ban giao
+PASS Giao thanh cong
+PASS Q5
+PASS Q6
+PASS Q7
+TOTAL 20 PASS
